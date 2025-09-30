@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Build C Program",
+      "command": "gcc",
+      "args": [
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}.out",
+        "-g"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Compiles the currently open C file using gcc with debug symbols."
+    },
+    {
+      "type": "shell",
+      "label": "Run C Program",
+      "command": "${fileDirname}/${fileBasenameNoExtension}.out",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "group": "test",
+      "detail": "Runs the compiled C program."
+    },
+    {
+      "type": "shell",
+      "label": "Build and Run C Program",
+      "command": "gcc",
+      "args": [
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}.out",
+        "&&",
+        "${fileDirname}/${fileBasenameNoExtension}.out"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "group": "build",
+      "problemMatcher": ["$gcc"],
+      "detail": "Compiles and runs the currently open C file using gcc."
+    }
+  ]
+}

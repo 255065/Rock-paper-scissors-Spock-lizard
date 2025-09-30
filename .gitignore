@@ -1,0 +1,21 @@
+# Compiled object files
+*.o
+
+# Executables
+*.out
+*.exe
+
+# Debug files
+*.dSYM/
+
+# macOS
+.DS_Store
+
+# VSCode settings (uncomment if you want to ignore)
+# .vscode/
+
+# Temporary files
+*~
+
+# Build directories
+build/
